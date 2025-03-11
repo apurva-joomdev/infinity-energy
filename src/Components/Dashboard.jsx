@@ -16,8 +16,8 @@ const RootBox = styled(Box)(({ theme, darkMode }) => ({
   flexDirection: "column",
   borderRadius: theme.spacing(2),
   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  backgroundColor: darkMode ? "#121212" : "white", // Dark mode background
-  color: darkMode ? "white" : "black", // Dark mode text color
+  backgroundColor: darkMode ? "#121212" : "white", 
+  color: darkMode ? "white" : "black", 
 }));
 
 const HeaderBox = styled(Box)({
@@ -33,7 +33,7 @@ const WelcomeTypography = styled(Typography)(({ darkMode }) => ({
 }));
 
 const BannerBox = styled(Box)(({ darkMode }) => ({
-  backgroundColor: darkMode ? "#333" : "#FFF9C4", // Dark mode banner background
+  backgroundColor: darkMode ? "#333" : "#FFF9C4",
   padding: defaultTheme.spacing(2),
   marginBottom: defaultTheme.spacing(3),
   textAlign: "center",

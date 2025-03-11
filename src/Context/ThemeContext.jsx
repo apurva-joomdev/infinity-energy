@@ -1,6 +1,7 @@
 // ThemeContext.js
 import { createContext, useState, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from '@mui/material/CssBaseline'; // Import CssBaseline
 
 const ThemeContext = createContext({
   darkMode: false,
@@ -23,13 +24,13 @@ export const ThemeProviderWrapper = ({ children }) => {
     palette: {
       mode: darkMode ? "dark" : "light",
     },
-    // Set CSS variables in :root
     components: {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
             backgroundColor: darkMode ? 'black' : 'white',
             color: darkMode ? 'white' : 'black',
+            transition: 'background-color 0.3s ease, color 0.3s ease', // Add smooth transition
           },
         },
       },
@@ -42,7 +43,10 @@ export const ThemeProviderWrapper = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline /> {/* Add CssBaseline here */}
+        {children}
+      </ThemeProvider>
     </ThemeContext.Provider>
   );
 };
